@@ -13,7 +13,7 @@
     }
 
     // Tests
-    mouthSize("toucan"),"wide")
-    mouthSize("ant bear"),"wide")
-    mouthSize("alligator"),"small")
-    mouthSize("ALLIGATOR"),"small")
+    mouthSize("toucan"),"wide"
+    mouthSize("ant bear"),"wide"
+    mouthSize("alligator"),"small"
+    mouthSize("ALLIGATOR"),"small"

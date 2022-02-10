@@ -21,8 +21,8 @@
   // result - division by zero (refer to the specifications on how to handle this in your language)
 
     // Solution
-    function remainder(n, m){
-      return m == 0 ? NaN : n > m ? n % m : m % n;
+    function remainder(a, b){
+      return a > b ? a % b : b % a;
     }
 
     // Tests

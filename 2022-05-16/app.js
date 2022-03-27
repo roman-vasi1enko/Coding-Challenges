@@ -41,12 +41,18 @@
   // The format of the strings will always be Europe and JavaScript.
   // All data will always be valid and uniform as in the example above.
 
-    //Solution
+    //Solution 1
     function countDevelopers(list) {
       let devs = 0;
       list.forEach(obj => obj.continent === 'Europe' && obj.language === 'JavaScript' ? devs++ : devs);
       return devs;
     }
+
+    //Solution 2
+    function countDevelopers(list) {
+      return list.filter(obj => obj.continent === 'Europe' && obj.language === 'JavaScript').length;
+    }
+
 
     // Tests
     const list1 = [

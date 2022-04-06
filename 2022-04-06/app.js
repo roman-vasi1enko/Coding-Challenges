@@ -12,7 +12,7 @@ The array will always have at least 2 elements1 and all elements will be numbers
 Can you write a solution that will return null2 for both [] and [ x ] though? (This is an empty array and one with a single number and is not tested for, but you can write your own example test. )
 */
 
-// Soltion
+// Solution
     function firstNonConsecutive (arr) {
         for (let i = 0; i < arr.length; i++) {
             if (arr[i + 1] !== arr[i] + 1) {

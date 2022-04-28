@@ -9,7 +9,7 @@
         let index = (array, n) => n >= array.length ? -1 : array[n] ** n;
 
         // Solution 2
-        let index = (array, n) => array[n] ** n || -1
+        let index1 = (array, n) => array[n] ** n || -1
 
         // Tests 
         index([1, 2, 3, 4],2) //9

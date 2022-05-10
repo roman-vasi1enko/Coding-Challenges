@@ -1,86 +1,54 @@
-// Task 1 - Drink about
-  // Kids drink toddy.
-  // Teens drink coke.
-  // Young adults drink beer.
-  // Adults drink whisky.
-  // Make a function that receive age, and return what they drink.
+// Task 1 - Jaden Casing Strings
+  // Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
+  // Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
 
-  // Rules:
-  // Children under 14 old.
-  // Teens under 18 old.
-  // Young under 21 old.
-  // Adults have 21 or more.
-  // Examples: (Input --> Output)
+  // Example:
+  // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+  // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
-  // 13 --> "drink toddy"
-  // 17 --> "drink coke"
-  // 18 --> "drink beer"
-  // 20 --> "drink beer"
-  // 30 --> "drink whisky"
-
-    // Solution
-    function peopleWithAgeDrink(old) {
-      return (
-        old < 14 ? 'drink toddy' : 
-          old < 18 ? 'drink coke' : 
-            old < 21 ? 'drink beer' : 'drink whisky'
-      );
+    // Solution 
+    String.prototype.toJadenCase = function() {
+      return this.split(' ').map(item => item[0].toUpperCase() + item.slice(1)).join(' ')
     };
-    
+
     // Test
-    peopleWithAgeDrink(22) //'drink whisky'
+    var str = "How can mirrors be real if our eyes aren't real";
+    str.toJadenCase() //"How Can Mirrors Be Real If Our Eyes Aren't Real"
 
 
-// Task 2 - What's the real floor?
-  // Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
-  // Write a function that given a floor in the american system returns the floor in the european system.
-  // With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
-  // Basements (negatives) stay the same as the universal level.
-  
-  // Examples
-  // 1  =>  0 
-  // 0  =>  0
-  // 5  =>  4
-  // 15  =>  13
-  // -3  =>  -3
+  // Task 2 - Sum of two lowest positive integers
+    // Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+    // For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+    // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
-    // Solution
-    function getRealFloor(n) {
-      return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
-    }
-
-    // Tests
-    getRealFloor(1) //0
-    getRealFloor(5) //4
-    getRealFloor(15) //13
-
-
-// Task 3 - Multiplication Table for Number
-  // Your goal is to return multiplication table for number that is always an integer from 1 to 10.
-
-  // For example, a multiplication table (string) for number == 5 looks like below:
-  // 1 * 5 = 5
-  // 2 * 5 = 10
-  // 3 * 5 = 15
-  // 4 * 5 = 20
-  // 5 * 5 = 25
-  // 6 * 5 = 30
-  // 7 * 5 = 35
-  // 8 * 5 = 40
-  // 9 * 5 = 45
-  // 10 * 5 = 50
-  // P. S. You can use \n in string to jump to the next line.
-  // Note: newlines should be added between rows, but there should be no trailing newline at the end. If you're unsure about the format, look at the sample tests.
-
-    // Solution
-    function multiTable(number) {
-      let table = '';
-      for (let i = 1; i <= 10; i++) {
-        table+=`${i} * ${number} = ${i * number}\n`
+      // Solution
+      function sumTwoSmallestNumbers(numbers) {  
+        numbers.sort((a,b) => a - b)
+        return numbers[0] + numbers[1]
       }
-      return table.trimEnd('\n');
-    }
 
-    // Tests
-    multiTable(5) //1 * 5 = 5\n2 * 5 = 10\n3 * 5 = 15\n4 * 5 = 20\n5 * 5 = 25\n6 * 5 = 30\n7 * 5 = 35\n8 * 5 = 40\n9 * 5 = 45\n10 * 5 = 50'
-    multiTable(1) //1 * 1 = 1\n2 * 1 = 2\n3 * 1 = 3\n4 * 1 = 4\n5 * 1 = 5\n6 * 1 = 6\n7 * 1 = 7\n8 * 1 = 8\n9 * 1 = 9\n10 * 1 = 10'
+      // Tests
+      sumTwoSmallestNumbers([5, 8, 12, 19, 22]) //13 , "Sum should be 13"
+      sumTwoSmallestNumbers([15, 28, 4, 2, 43]) //6 , "Sum should be 6"
+      sumTwoSmallestNumbers([3, 87, 45, 12, 7]) //10 , "Sum should be 10"
+      sumTwoSmallestNumbers([23, 71, 33, 82, 1]) //24 , "Sum should be 24"
+      sumTwoSmallestNumbers([52, 76, 14, 12, 4]) //16 , "Sum should be 16"
+
+
+// Task 3 - Create Phone Number
+  // Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+  // Example
+  // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+  // The returned format must be correct in order to complete this challenge.
+  // Don't forget the space after the closing parentheses!
+
+      // Solution
+      function createPhoneNumber(numbers){
+        let arr = numbers.join('');
+        return `(${arr.slice(0, 3)}) ${arr.slice(3, 6)}-${arr.slice(6)}`
+      }
+
+      // Tests
+      createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) //"(123) 456-7890"
+      createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) //"(111) 111-1111"
+      createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) //"(123) 456-7890"

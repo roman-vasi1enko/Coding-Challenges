@@ -9,14 +9,9 @@
     // Solution
     function outed(meet, boss){
       let average = 0;
-      for (let p in meet) {
-        if (meet[p] === boss) {
-          meet[p] *= 2;
-        }
-        average += meet[p];
-      }
-      average = average / Object.keys(meet).length;
-      return average <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
+      let team = Object.keys(meet);
+      team.forEach(person => person === boss ? average += meet[person] * 2 : average += meet[person]);
+      return average / team.length <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
     }
 
     // Tests

@@ -11,9 +11,9 @@
     }
 
     // Tests
-    doubleChar("abcd"), "aabbccdd");
-    doubleChar("Adidas"), "AAddiiddaass");
-    doubleChar("1337"), "11333377");
-    doubleChar("illuminati"), "iilllluummiinnaattii");
-    doubleChar("123456"), "112233445566");
-    doubleChar("%^&*("), "%%^^&&**((");
+    doubleChar("abcd") // "aabbccdd"
+    doubleChar("Adidas") // "AAddiiddaass"
+    doubleChar("1337") // "11333377"
+    doubleChar("illuminati") // "iilllluummiinnaattii"
+    doubleChar("123456") // "112233445566"
+    doubleChar("%^&*(") // "%%^^&&**(("

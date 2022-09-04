@@ -9,9 +9,7 @@
   // You must not mutate the original array.
 
     // Solution
-    let multiplyAll =
-      array => 
-        multiplier => array.map(n => n * multiplier)
+    let multiplyAll = array => multiplier => array.map(n => n * multiplier)
 
     // Tests
     multiplyAll([1, 2, 3])(1) // [1, 2, 3]

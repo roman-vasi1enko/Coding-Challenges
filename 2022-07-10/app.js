@@ -40,7 +40,7 @@
           break;
           
           case 8:
-          'Eight'
+          return 'Eight'
           break;
           
           case 9:

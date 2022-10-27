@@ -11,6 +11,11 @@
       return numberInt - stringInt;
     }
 
+    // Solution 2
+    function divCon(x){
+      return x.reduce((sum, num) => typeof num === 'number'? sum + num : sum - Number(num), 0);
+    }
+
     // Tests
     divCon([9, 3, '7', '3']) // 2
     divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]) // 14 

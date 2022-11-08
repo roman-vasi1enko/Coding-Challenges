@@ -15,6 +15,6 @@
       }, 0);
     }
 
-    // Tests
+    // Test
     let arr = [4, 0, 4];
     arr.numberOfOccurrences(4) // 2

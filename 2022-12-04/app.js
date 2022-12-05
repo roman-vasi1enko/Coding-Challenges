@@ -30,7 +30,7 @@
       }
       
       return false;
-      
+    }
     
     console.log(isHello('hello'), 'true')
     console.log(isHello('ciAo'), 'true')

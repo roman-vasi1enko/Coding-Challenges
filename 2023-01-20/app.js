@@ -5,10 +5,7 @@
 
     // Solution
     function repeats(arr){
-      let unique = [];
-      arr.filter((num, i) => arr.indexOf(num) === arr.lastIndexOf(num) ? unique.push(num) : num)
-      
-      return unique.reduce((sum, num) => sum + num, 0)
+      return arr.filter(num => arr.indexOf(num) === arr.lastIndexOf(num)).reduce((sum, num) => sum + num, 0)
     };
 
     // Tests

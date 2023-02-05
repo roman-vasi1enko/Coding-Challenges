@@ -28,11 +28,11 @@
 // If the input string is just "null", return null.
 
   class Node {
-  constructor(data, next = null) {
-    this.data = data;
-    this.next = next;
+    constructor(data, next = null) {
+      this.data = data;
+      this.next = next;
+    }
   }
-}
 
   // Solution
   function parse(string) {

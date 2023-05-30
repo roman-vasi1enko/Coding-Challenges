@@ -9,7 +9,7 @@
 
     // Solution
     function quotable(name, quote){
-      return `${name} said: '${quote}'`
+      return `${name} said: "${quote}"`
     }
 
     // Tests
